@@ -1,4 +1,4 @@
-# 🚇 Sürcüsüz Metro Simülasyonu (Rota Optimizasyonu)
+# 🚇 Metro Simülasyonu (Rota Optimizasyonu)
 
 Bu proje, bir metro ağında iki istasyon arasındaki:
 
