@@ -68,9 +68,6 @@ Bu projede aşağıdaki teknolojiler ve kütüphaneler kullanılmıştır:
 🚄 En hızlı rota (18 dakika): AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB
 ```
 
-### 🎯 **Örnek 2: Metro Haritası Görselleştirme**
-
-
 
 ---
 
