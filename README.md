@@ -81,5 +81,5 @@ Bu projede aşağıdaki teknolojiler ve kütüphaneler kullanılmıştır:
 
 ---
 
-📌 **Bu proje Global AI Hub "Python ile Yapay Zekaya Giriş Bootcamp" Mart 2025 kapsamında geliştirilmiştir.** 🚀
+📌 **Bu proje Global AI Hub "Python ve Yapay Zekaya Giriş Bootcamp" Mart 2025 kapsamında geliştirilmiştir.** 🚀
 
