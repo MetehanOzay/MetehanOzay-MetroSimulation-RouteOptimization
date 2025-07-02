@@ -1,82 +1,86 @@
-🚇 Metro Simulation (Route Optimization)
-This project is a Python simulation that aims to find the following between two stations in a metro network:
+# 🚇 Metro Simülasyonu (Rota Optimizasyonu)
 
-The route requiring the least number of transfers (BFS Algorithm)
+Bu proje, bir metro ağında iki istasyon arasındaki:
 
-The fastest route (A* Algorithm)
+- **En az aktarma gerektiren rota** (BFS Algoritması)
+- **En hızlı rota** (A\* Algoritması) bulmayı amaçlayan bir Python simülasyonudur.
 
-Additionally, the project presents the metro line as a graph with visualization support. Users can find the most optimal route between stations and examine the structure of the metro network in detail.
+Ayrıca proje, **görselleştirme desteği** ile metro hattını bir graf olarak sunmaktadır. Kullanıcılar, istasyonlar arasındaki en optimum rotayı bulabilir ve metro ağının yapısını detaylı bir şekilde inceleyebilirler.
 
-📌 Technologies and Libraries Used
-The following technologies and libraries were used in this project:
+---
 
-Python 3 (Main programming language)
+## 📌 Kullanılan Teknolojiler ve Kütüphaneler
 
-collections.deque (Queue structure for BFS)
+Bu projede aşağıdaki teknolojiler ve kütüphaneler kullanılmıştır:
 
-heapq (Priority queue for A* algorithm)
+- **Python 3** (Ana programlama dili)
+- **collections.deque** (BFS için kuyruk yapısı)
+- **heapq** (A\* algoritması için öncelik kuyruğu)
+- **functools.total_ordering** (Karşılaştırma işlemleri için)
+- **networkx ve matplotlib** (Metro ağının görselleştirilmesi için)
 
-functools.total_ordering (For comparison operations)
+---
 
-networkx and matplotlib (For visualizing the metro network)
+## 🔍 Algoritmaların Çalışma Mantığı
 
-🔍 Logic Behind the Algorithms
-🔵 BFS Algorithm (Least Transfer Route)
-Uses Breadth-First Search (BFS) to find the route with the fewest transfers.
+### 🔵 **BFS Algoritması (En Az Aktarmalı Rota)**
 
-The queue structure is used to determine the path to the destination with the shortest number of steps.
+- **Genişlik Öncelikli Arama (Breadth-First Search - BFS)** kullanılarak **en az aktarma gerektiren** rota bulunur.
+- **Kuyruk (Queue) yapısı** kullanılarak en kısa adım sayısı ile hedefe ulaşan yol belirlenir.
 
-🔴 A* Algorithm (Fastest Route)*
-The A* algorithm determines the fastest possible route using the Dijkstra + Heuristic approach.
+### 🔴 *A\** Algoritması (En Hızlı Rota)*
 
-Priority queue (heapq) processes the lowest-cost stations first.
+- *A\** Algoritması*, **Dijkstra + Heuristik** yaklaşımı ile en hızlı gidilebilecek rotayı belirler.
+- **Öncelik kuyruğu (heapq)** ile en düşük maliyetli istasyonlar öncelikli işlenerek hesaplanır.
+- **Heuristik (H) fonksiyonu** olarak her istasyon arası tahmini **3 dakika** olarak belirlenmiştir.
 
-The heuristic (H) function assumes an estimated 3 minutes between each station.
+### 🖼️ **Metro Ağını Görselleştirme**
 
-🖼️ Visualizing the Metro Network
-With NetworkX, stations are modeled as nodes, and line connections as edges.
+- **NetworkX** kullanarak istasyonlar **düğüm (node)**, hat bağlantıları **kenar (edge)** olarak modellenmiştir.
+- **Matplotlib** kullanarak metro hattı grafik olarak sunulmuştur.
 
-The metro line is presented graphically using Matplotlib.
+---
 
-🛠️ How to Run?
-Install the required libraries:
+## 🛠️ Nasıl Çalıştırılır?
+
+1. **Gerekli kütüphaneleri yükleyin:**
+   
+sh
+   pip install networkx matplotlib
+
+2. **Projeyi çalıştırmak için:**
+   
+sh
+   python MetehanOzay_metro_simulation.py
+
+3. **Ana menüden işlem seçeceksiniz:**
+   - **1️⃣ Metro Ağını Görselleştir** → Metro hattının grafik olarak görüntülenmesini sağlar.
+   - **2️⃣ Rota Sorgula** → Kullanıcının belirlediği iki istasyon arasındaki en hızlı ve en az aktarmalı rotayı hesaplar.
+   - **3️⃣ Test Senaryolarını Çalıştır** → Önceden belirlenmiş bazı istasyonlar arasında rota hesaplamalarını çalıştırarak algoritmaların doğruluğunu test eder.
+   - **4️⃣ Çıkış Yap** → Programdan çıkış yapar.
+
+---
+
+## 🚀 Örnek Kullanım & Çıktılar
+
+### 🎯 **Örnek 1: AŞTİ'den OSB'ye Rota Bulma**
 
 sh
-Kopyala
-Düzenle
-pip install networkx matplotlib
-To run the project:
+📍 En az aktarmalı rota: AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB
+🚄 En hızlı rota (18 dakika): AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB
 
-sh
-Kopyala
-Düzenle
-python MetehanOzay_metro_simulation.py
-You will choose an action from the main menu:
 
-1️⃣ Visualize the Metro Network → Displays the metro line as a graph.
 
-2️⃣ Query Route → Calculates the fastest and least-transfer route between two user-selected stations.
+---
 
-3️⃣ Run Test Scenarios → Runs route calculations between pre-defined stations to test the accuracy of the algorithms.
+## 🔗 Kaynaklar
 
-4️⃣ Exit → Exits the program.
+- [BFS Algoritması](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
+- [A\* Algoritması](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
+- [Python Collections](https://docs.python.org/3/library/collections.html)
+- [Python Heapq](https://docs.python.org/3/library/heapq.html)
+- [NetworkX Belgeleri](https://networkx.org/documentation/stable/)
 
-🚀 Example Usage & Outputs
-🎯 Example 1: Finding a Route from AŞTİ to OSB
-sh
-Kopyala
-Düzenle
-📍 Least transfer route: AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB  
-🚄 Fastest route (18 minutes): AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB
-🔗 Resources
-BFS Algorithm
+---
 
-A* Algorithm
-
-Python Collections
-
-Python Heapq
-
-NetworkX Documentation
-
-📌 This project was developed as part of the Global AI Hub "Introduction to Python and AI Bootcamp" in March 2025. 🚀
+📌 **Bu proje Global AI Hub "Python ve Yapay Zekaya Giriş Bootcamp" Mart 2025 kapsamında geliştirilmiştir.** 🚀
