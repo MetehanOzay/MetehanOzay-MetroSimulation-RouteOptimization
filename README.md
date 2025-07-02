@@ -1,86 +1,87 @@
-# 🚇 Metro Simülasyonu (Rota Optimizasyonu)
+# 🚇 Metro Simulation (Route Optimization)
 
-Bu proje, bir metro ağında iki istasyon arasındaki:
+This project is a Python simulation that aims to find between two stations in a metro network:
 
-- **En az aktarma gerektiren rota** (BFS Algoritması)
-- **En hızlı rota** (A\* Algoritması) bulmayı amaçlayan bir Python simülasyonudur.
+- **The route requiring the least number of transfers** (BFS Algorithm)
+- **The fastest route** (A* Algorithm)
 
-Ayrıca proje, **görselleştirme desteği** ile metro hattını bir graf olarak sunmaktadır. Kullanıcılar, istasyonlar arasındaki en optimum rotayı bulabilir ve metro ağının yapısını detaylı bir şekilde inceleyebilirler.
-
----
-
-## 📌 Kullanılan Teknolojiler ve Kütüphaneler
-
-Bu projede aşağıdaki teknolojiler ve kütüphaneler kullanılmıştır:
-
-- **Python 3** (Ana programlama dili)
-- **collections.deque** (BFS için kuyruk yapısı)
-- **heapq** (A\* algoritması için öncelik kuyruğu)
-- **functools.total_ordering** (Karşılaştırma işlemleri için)
-- **networkx ve matplotlib** (Metro ağının görselleştirilmesi için)
+Additionally, the project presents the metro line as a graph with **visualization support**. Users can find the most optimal route between stations and examine the structure of the metro network in detail.
 
 ---
 
-## 🔍 Algoritmaların Çalışma Mantığı
+## 📌 Technologies and Libraries Used
 
-### 🔵 **BFS Algoritması (En Az Aktarmalı Rota)**
+The following technologies and libraries were used in this project:
 
-- **Genişlik Öncelikli Arama (Breadth-First Search - BFS)** kullanılarak **en az aktarma gerektiren** rota bulunur.
-- **Kuyruk (Queue) yapısı** kullanılarak en kısa adım sayısı ile hedefe ulaşan yol belirlenir.
-
-### 🔴 *A\** Algoritması (En Hızlı Rota)*
-
-- *A\** Algoritması*, **Dijkstra + Heuristik** yaklaşımı ile en hızlı gidilebilecek rotayı belirler.
-- **Öncelik kuyruğu (heapq)** ile en düşük maliyetli istasyonlar öncelikli işlenerek hesaplanır.
-- **Heuristik (H) fonksiyonu** olarak her istasyon arası tahmini **3 dakika** olarak belirlenmiştir.
-
-### 🖼️ **Metro Ağını Görselleştirme**
-
-- **NetworkX** kullanarak istasyonlar **düğüm (node)**, hat bağlantıları **kenar (edge)** olarak modellenmiştir.
-- **Matplotlib** kullanarak metro hattı grafik olarak sunulmuştur.
+- **Python 3** (Main programming language)
+- **collections.deque** (Queue structure for BFS)
+- **heapq** (Priority queue for the A* algorithm)
+- **functools.total_ordering** (For comparison operations)
+- **networkx and matplotlib** (For visualizing the metro network)
 
 ---
 
-## 🛠️ Nasıl Çalıştırılır?
+## 🔍 Working Principle of the Algorithms
 
-1. **Gerekli kütüphaneleri yükleyin:**
-   
-sh
+### 🔵 **BFS Algorithm (Least Transfer Route)**
+
+- **Breadth-First Search (BFS)** is used to find the **route requiring the fewest transfers**.
+- Using a **queue structure**, the path that reaches the destination with the fewest number of steps is determined.
+
+### 🔴 *A\** Algorithm (Fastest Route)*
+
+- The *A\** Algorithm determines the fastest possible route using the **Dijkstra + Heuristic** approach.
+- The **priority queue (heapq)** is used to process the lowest-cost stations first.
+- As the **Heuristic (H) function**, an estimated **3 minutes** is assigned between each station.
+
+### 🖼️ **Visualizing the Metro Network**
+
+- Using **NetworkX**, stations are modeled as **nodes**, and line connections as **edges**.
+- The metro line is presented graphically using **Matplotlib**.
+
+---
+
+## 🛠️ How to Run?
+
+1. **Install the required libraries:**
+
+   ```sh
    pip install networkx matplotlib
+   ```
 
-2. **Projeyi çalıştırmak için:**
-   
-sh
+2. **To run the project:**
+
+   ```sh
    python MetehanOzay_metro_simulation.py
+   ```
 
-3. **Ana menüden işlem seçeceksiniz:**
-   - **1️⃣ Metro Ağını Görselleştir** → Metro hattının grafik olarak görüntülenmesini sağlar.
-   - **2️⃣ Rota Sorgula** → Kullanıcının belirlediği iki istasyon arasındaki en hızlı ve en az aktarmalı rotayı hesaplar.
-   - **3️⃣ Test Senaryolarını Çalıştır** → Önceden belirlenmiş bazı istasyonlar arasında rota hesaplamalarını çalıştırarak algoritmaların doğruluğunu test eder.
-   - **4️⃣ Çıkış Yap** → Programdan çıkış yapar.
-
----
-
-## 🚀 Örnek Kullanım & Çıktılar
-
-### 🎯 **Örnek 1: AŞTİ'den OSB'ye Rota Bulma**
-
-sh
-📍 En az aktarmalı rota: AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB
-🚄 En hızlı rota (18 dakika): AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB
-
-
+3. **You will select an option from the main menu:**
+   - **1️⃣ Visualize the Metro Network** → Allows the metro line to be displayed graphically.
+   - **2️⃣ Query Route** → Calculates the fastest and the least transfer route between two stations defined by the user.
+   - **3️⃣ Run Test Scenarios** → Tests the accuracy of the algorithms by running route calculations between some predefined stations.
+   - **4️⃣ Exit** → Exits the program.
 
 ---
 
-## 🔗 Kaynaklar
+## 🚀 Example Usage & Outputs
 
-- [BFS Algoritması](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
-- [A\* Algoritması](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
+### 🎯 Example 1: Finding a Route from AŞTİ to OSB
+
+```sh
+📍 Least transfer route: AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB
+🚄 Fastest route (18 minutes): AŞTİ -> Kızılay -> Ulus -> Demetevler -> OSB
+```
+
+---
+
+## 🔗 Resources
+
+- [BFS Algorithm](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
+- [A* Algorithm](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
 - [Python Collections](https://docs.python.org/3/library/collections.html)
 - [Python Heapq](https://docs.python.org/3/library/heapq.html)
-- [NetworkX Belgeleri](https://networkx.org/documentation/stable/)
+- [NetworkX Documentation](https://networkx.org/documentation/stable/)
 
 ---
 
-📌 **Bu proje Global AI Hub "Python ve Yapay Zekaya Giriş Bootcamp" Mart 2025 kapsamında geliştirilmiştir.** 🚀
+📌 **This project was developed as part of the Global AI Hub "Introduction to Python and Artificial Intelligence Bootcamp" in March 2025.** 🚀
